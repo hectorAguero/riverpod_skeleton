@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:riverpod_theme_template/src/shared_preferences_provider.dart';
 
-/// A service that stores and retrieves user settings.
-///
-/// By default, this class does not persist user settings. If you'd like to
-/// persist the user settings locally, use the shared_preferences package. If
-/// you'd like to store settings on a web server, use the http package.
-class SettingsService {
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+part 'settings_service.g.dart';
 
-  /// Loads the User's preferred ThemeMode from local or remote storage.
-  Future<ThemeMode> themeMode() async {
-    // Read value
-    final index = (await _prefs).getInt('theme_mode') ?? 0;
-    // Convert int to enum value
-    return ThemeMode.values[index];
+/// RiverpodAlwaysAliveClass that provides the current [ThemeMode] as a Future
+@Riverpod(keepAlive: true)
+class SettingsService extends _$SettingsService {
+  @override
+  FutureOr<ThemeMode> build() async {
+    final prefs = await ref.watch(sharedPreferencesProvider.future);
+    return ThemeMode.values[prefs.getInt('theme_mode') ?? 0];
   }
 
-  /// Persists the user's preferred ThemeMode to local or remote storage.
+  /// Updates the theme mode in the state and cache
   Future<void> updateThemeMode(ThemeMode theme) async {
-    // Write value
-    await (await _prefs).setInt('theme_mode', theme.index);
+    final prefs = await ref.watch(sharedPreferencesProvider.future);
+    state = AsyncData(theme);
+    await prefs.setInt('theme_mode', state.value!.index);
   }
 }

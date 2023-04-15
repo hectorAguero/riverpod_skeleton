@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-
-import '../settings/settings_view.dart';
-import 'sample_item.dart';
-import 'sample_item_details_view.dart';
+import 'package:riverpod_theme_template/src/sample_feature/sample_item.dart';
+import 'package:riverpod_theme_template/src/sample_feature/sample_item_details_view.dart';
+import 'package:riverpod_theme_template/src/settings/settings_view.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {
+  /// Constructs a SampleItemListView, create a list of SampleItems if none.
   const SampleItemListView({
     super.key,
     this.items = const [SampleItem(1), SampleItem(2), SampleItem(3)],
   });
 
+  /// The route name for this view wich is root
   static const routeName = '/';
 
+  /// The list of SampleItems to display.
   final List<SampleItem> items;
 
   @override
@@ -62,7 +64,7 @@ class SampleItemListView extends StatelessWidget {
                 context,
                 SampleItemDetailsView.routeName,
               );
-            }
+            },
           );
         },
       ),

@@ -1,6 +1,6 @@
 # riverpod_theme_template
 
-A new Flutter project.
+<img src="./README_photo.gif">
 
 ## Getting Started
 
