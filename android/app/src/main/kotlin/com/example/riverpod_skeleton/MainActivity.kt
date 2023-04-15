@@ -1,4 +1,4 @@
-package com.example.riverpod_theme_template
+package com.example.riverpod_skeleton
 
 import io.flutter.embedding.android.FlutterActivity
 

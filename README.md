@@ -1,4 +1,4 @@
-# riverpod_theme_template
+# riverpod_skeleton
 
 <img src="./README_photo.gif">
 

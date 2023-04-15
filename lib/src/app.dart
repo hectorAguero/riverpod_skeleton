@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_theme_template/src/sample_feature/sample_item_details_view.dart';
-import 'package:riverpod_theme_template/src/sample_feature/sample_item_list_view.dart';
-import 'package:riverpod_theme_template/src/settings/settings_controller.dart';
-import 'package:riverpod_theme_template/src/settings/settings_view.dart';
+import 'package:riverpod_skeleton/src/sample_feature/sample_item_details_view.dart';
+import 'package:riverpod_skeleton/src/sample_feature/sample_item_list_view.dart';
+import 'package:riverpod_skeleton/src/settings/settings_controller.dart';
+import 'package:riverpod_skeleton/src/settings/settings_view.dart';
 
 /// The Widget that configures your application.
 class MyApp extends ConsumerWidget {
@@ -14,6 +15,13 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.transparent,
+        statusBarColor: Colors.transparent,
+      ),
+    );
     return MaterialApp(
       // Providing a restorationScopeId allows the Navigator built by the
       // MaterialApp to restore the navigation stack when a user leaves and
@@ -45,8 +53,8 @@ class MyApp extends ConsumerWidget {
       // Define a light and dark color theme. Then, read the user's
       // preferred ThemeMode (light, dark, or system default) from the
       // SettingsController to display the correct theme.
-      theme: ThemeData(),
-      darkTheme: ThemeData.dark(),
+      theme: ThemeData(useMaterial3: true),
+      darkTheme: ThemeData.dark(useMaterial3: true),
       themeMode: ref.watch(settingsControllerProvider),
 
       // Define a function to handle named routes in order to support

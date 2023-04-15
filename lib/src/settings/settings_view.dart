@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_theme_template/src/settings/settings_controller.dart';
+import 'package:riverpod_skeleton/src/settings/settings_controller.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:riverpod_theme_template/src/settings/settings_controller.dart';
-import 'package:riverpod_theme_template/src/settings/settings_service.dart';
-import 'package:riverpod_theme_template/src/shared_preferences_provider.dart';
+import 'package:riverpod_skeleton/src/settings/settings_controller.dart';
+import 'package:riverpod_skeleton/src/settings/settings_service.dart';
+import 'package:riverpod_skeleton/src/shared_preferences_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> mockThemeModeInCache({

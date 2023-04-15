@@ -1,6 +1,6 @@
 {
-    "name": "riverpod_theme_template",
-    "short_name": "riverpod_theme_template",
+    "name": "riverpod_skeleton",
+    "short_name": "riverpod_skeleton",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

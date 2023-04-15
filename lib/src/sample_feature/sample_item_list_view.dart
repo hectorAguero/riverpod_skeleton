@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_theme_template/src/sample_feature/sample_item.dart';
-import 'package:riverpod_theme_template/src/sample_feature/sample_item_details_view.dart';
-import 'package:riverpod_theme_template/src/settings/settings_view.dart';
+import 'package:riverpod_skeleton/src/sample_feature/sample_item.dart';
+import 'package:riverpod_skeleton/src/sample_feature/sample_item_details_view.dart';
+import 'package:riverpod_skeleton/src/settings/settings_view.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {

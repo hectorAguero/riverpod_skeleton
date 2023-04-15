@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:riverpod_theme_template/src/settings/settings_service.dart';
+import 'package:riverpod_skeleton/src/settings/settings_service.dart';
 
 part 'settings_controller.g.dart';
 
