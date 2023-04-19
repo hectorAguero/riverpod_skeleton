@@ -6,16 +6,21 @@ import 'package:riverpod_skeleton/src/app.dart';
 void main() {
   //Android navigation bar tranparent
   WidgetsFlutterBinding.ensureInitialized();
+  setAndroidNavigationBar();
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
+}
+
+/// Set the Android navigation bar to transparent.
+void setAndroidNavigationBar() {
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.transparent,
       statusBarColor: Colors.transparent,
-    ),
-  );
-  runApp(
-    const ProviderScope(
-      child: MyApp(),
     ),
   );
 }
